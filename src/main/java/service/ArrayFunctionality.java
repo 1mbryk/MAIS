@@ -52,10 +52,11 @@ public class ArrayFunctionality {
     }
 
     // ?????????????????
-    public Integer getMean(Array array){
-        Integer mean = 0;
-        Array sortedArray = array.sort("quick");
-        mean = array.get(sortedArray.size()/2);
-        return mean;
+    public Integer getMedian(Array array){
+        Integer median;
+        Sort sort = new Sort();
+        Array sortedArray = sort.sort(array, "quick");
+        median = array.get(sortedArray.size()/2);
+        return median;
     }
 }

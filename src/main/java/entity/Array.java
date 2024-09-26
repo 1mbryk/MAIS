@@ -7,19 +7,38 @@ import exceptions.*;
 public class Array {
     private Integer[] array;
     private int size;
+    private int capacity;
 
+    public Array(){
+        size = 0;
+        capacity = 10;
+        array = new Integer[capacity];
+    }
     public Array(Integer[] array) {
         this.array = array;
         this.size = array.length;
+        this.capacity = array.length;
     }
 
     public Array(Array array) {
         this.array = array.array.clone();
         this.size = array.size;
+        this.capacity = array.capacity;
     }
+
 
     public Integer get(int index){
         return array[index];
+    }
+
+    public void append(Integer... values){
+        for (Integer value : values) {
+            if (size == capacity) {
+                resize();
+            }
+            array[size] = value;
+            size++;
+        }
     }
 
     public void set(int index, Integer value){
@@ -28,84 +47,6 @@ public class Array {
 
     public int size(){
         return size;
-    }
-    public Array sort(String method){
-        return this.sort(method, false);
-    }
-
-    public Array sort(String method, boolean inplace){ // "quick" - quicksort, "bubble" - bubblesort
-
-        ArrayList<String> methods = new ArrayList<>(Arrays.asList("quick", "bubble"));
-        if (!methods.contains(method)){
-            throw new WrongSortMethodException("There is no \""+method+"\" sort method!");
-        }
-
-        Array clone = new Array(this);
-        switch (method){
-            case "quick":
-                this.quickSort(0, size -1);
-                break;
-            case "bubble":
-                this.bubbleSort();
-                break;
-//            case "insertion":
-
-        }
-        if (!inplace){
-            Array temp = new Array(this);
-            this.array = clone.array;
-            return temp;
-
-        }
-        return this;
-    }
-
-    private int partition(int low, int high)
-    {
-        // Choosing the pivot
-        int pivot = array[high];
-
-        int i = (low - 1);
-
-        for (int j = low; j <= high - 1; j++) {
-
-            if (array[j] < pivot) {
-                i++;
-                swap(i, j);
-            }
-        }
-        swap(i + 1, high);
-        return (i + 1);
-    }
-
-    // The main function that implements QuickSort
-    // arr[] --> Array to be sorted,
-    // low --> Starting index,
-    // high --> Ending index
-    public void quickSort(int low, int high)
-    {
-        if (low < high) {
-
-            // pi is partitioning index, arr[p]
-            // is now at right place
-            int pi = partition(low, high);
-
-            // Separately sort elements before
-            // partition and after partition
-            quickSort(low, pi - 1);
-            quickSort(pi + 1, high);
-        }
-    }
-    private void bubbleSort(){
-        for (int i = 0; i < array.length - 1; i++) {
-            for (int j = 0; j < array.length - i - 1; j++) {
-                if (array[j] > array[j + 1]) {
-                    int temp = array[j];
-                    array[j] = array[j + 1];
-                    array[j + 1] = temp;
-                }
-            }
-        }
     }
 
     public void swap(int i, int j){
@@ -117,10 +58,19 @@ public class Array {
     @Override
     public String toString() {
         String str = "[";
-        for (Integer integer : array) {
-            str += integer + " ";
+        for (int i = 0; i < size; i++) {
+            str += array[i] + ", ";
         }
-        str += "\b]";
+        str += "\b\b]";
         return str;
     }
+
+
+    private void resize(){
+        capacity *= 2;
+        Integer[] newArray = new Integer[capacity];
+        System.arraycopy(array, 0, newArray, 0, size);
+        array = newArray;
+    }
+
 }
