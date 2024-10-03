@@ -14,18 +14,31 @@ public class ReadFile {
     public Array read()
     {
         Array array = new Array();
+        Validation val = new Validation();
         try{
             Scanner scanner = new Scanner(file);
+
             String line;
             while (scanner.hasNextLine()) {
                 line = scanner.nextLine();
-                try {
-                    Integer parse = Integer.valueOf(line);
-                    array.append(parse);
+                if (!val.validateInputDate(line)){
+                    continue;
                 }
-                catch (NumberFormatException e) {
-                    System.out.println(e.getMessage());
+                String[] splitted;
+                if (line.contains(", ")){
+                    splitted = line.split(", ");
                 }
+                else if (line.contains(" - ")){
+                    splitted = line.split(" - ");
+                }
+                else{
+                    splitted = line.split("");
+                }
+                for (String str : splitted){
+                    array.append(Integer.valueOf(str));
+                }
+
+
             }
 
         }
