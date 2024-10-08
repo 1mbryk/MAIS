@@ -64,13 +64,17 @@ public class Array {
         str += "\b\b]";
         return str;
     }
-
+    public int[] getArray() {
+        int[] new_array = new int[size];
+        System.arraycopy(array, 0, new_array, 0, size);
+        return new_array;
+    }
 
     private void resize(){
         capacity *= 2;
-        Integer[] newArray = new Integer[capacity];
-        System.arraycopy(array, 0, newArray, 0, size);
-        array = newArray;
+        Integer[] new_array = new Integer[capacity];
+        System.arraycopy(array, 0, new_array, 0, size);
+        array = new_array;
     }
 
 }
