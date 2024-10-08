@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<papers>
+    <paper id="paper1">
+        <Title>New York Times</Title>
+        <Type>news paper</Type>
+        <Monthly>false</Monthly>
+        <Characteristics>
+            <Char type="isColored">true</Char>
+            <Char type="size">20</Char>
+            <Char type="isGlossy">false</Char>
+            <Char type="subscription">true</Char>
+        </Characteristics>
+    </paper>
+    <paper id="paper2">
+        <Title></Title>
+        <Type></Type>
+        <Monthly></Monthly>
+        <Characteristics>
+            <Char type="isColored"></Char>
+            <Char type="size"></Char>
+            <Char type="isGlossy"></Char>
+            <Char type="subscription"></Char>
+        </Characteristics>
+    </paper><paper id="paper2">
+        <Title></Title>
+        <Type></Type>
+        <Monthly></Monthly>
+        <Characteristics>
+            <Char type="isColored"></Char>
+            <Char type="size"></Char>
+            <Char type="isGlossy"></Char>
+            <Char type="subscription"></Char>
+        </Characteristics>
+    </paper><paper id="paper2">
+        <Title></Title>
+        <Type></Type>
+        <Monthly></Monthly>
+        <Characteristics>
+            <Char type="isColored"></Char>
+            <Char type="size"></Char>
+            <Char type="isGlossy"></Char>
+            <Char type="subscription"></Char>
+        </Characteristics>
+    </paper><paper id="paper2">
+        <Title></Title>
+        <Type></Type>
+        <Monthly></Monthly>
+        <Characteristics>
+            <Char type="isColored"></Char>
+            <Char type="size"></Char>
+            <Char type="isGlossy"></Char>
+            <Char type="subscription"></Char>
+        </Characteristics>
+    </paper>
+</papers>
