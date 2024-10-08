@@ -6,15 +6,21 @@ import exceptions.WrongSortAlgorithmException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+
 public class Sort {
 
+    private static Logger logger = LogManager.getLogger(Sort.class);
     public Array sort (Array array, String algorithm){ // "quick" - quicksort, "bubble" - bubblesort, "insertion"
 
         ArrayList<String> methods = new ArrayList<>(Arrays.asList("quick", "bubble", "insertion"));
         if (!methods.contains(algorithm)) {
+            logger.error("Wrong sort algorithm. Requested algorithm: {}", algorithm);
             throw new WrongSortAlgorithmException(algorithm);
         }
 
+        logger.info("Chosen sort algorithm: {}", algorithm);
         switch (algorithm) {
             case "quick":
                 this.quickSort(array, 0, array.size() - 1);

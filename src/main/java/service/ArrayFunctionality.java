@@ -1,7 +1,10 @@
 package service;
 import entity.Array;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class ArrayFunctionality {
+    private static final Logger logger = LogManager.getLogger(ArrayFunctionality.class);
 
     public Integer min(Array array){
         Integer min = array.get(0);
@@ -10,6 +13,7 @@ public class ArrayFunctionality {
                 min = array.get(i);
             }
         }
+        logger.info("minimum value is: {}", min);
         return min;
     }
 
@@ -20,6 +24,7 @@ public class ArrayFunctionality {
                 max = array.get(i);
             }
         }
+        logger.info("maximum value is: {}", max);
         return max;
     }
 
@@ -30,6 +35,7 @@ public class ArrayFunctionality {
                 count++;
             }
         }
+        logger.info("amount of positive values is: {}", count);
         return count;
     }
 
@@ -40,6 +46,7 @@ public class ArrayFunctionality {
                 count++;
             }
         }
+        logger.info("amount of negative values is: {}", count);
         return count;
     }
 
@@ -48,6 +55,7 @@ public class ArrayFunctionality {
         for (int i = 0; i < array.size(); i++) {
             sum += array.get(i);
         }
+        logger.info("sum is: {}", sum);
         return sum;
     }
 
@@ -57,6 +65,7 @@ public class ArrayFunctionality {
         Sort sort = new Sort();
         Array sortedArray = sort.sort(array, "quick");
         median = array.get(sortedArray.size()/2);
+        logger.info("median is: {}", median);
         return median;
     }
 }
