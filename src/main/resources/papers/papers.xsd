@@ -1,55 +1,37 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<papers>
-    <paper id="paper1">
-        <Title>New York Times</Title>
-        <Type>news paper</Type>
-        <Monthly>false</Monthly>
-        <Characteristics>
-            <Char type="isColored">true</Char>
-            <Char type="size">20</Char>
-            <Char type="isGlossy">false</Char>
-            <Char type="subscription">true</Char>
-        </Characteristics>
-    </paper>
-    <paper id="paper2">
-        <Title></Title>
-        <Type></Type>
-        <Monthly></Monthly>
-        <Characteristics>
-            <Char type="isColored"></Char>
-            <Char type="size"></Char>
-            <Char type="isGlossy"></Char>
-            <Char type="subscription"></Char>
-        </Characteristics>
-    </paper><paper id="paper2">
-        <Title></Title>
-        <Type></Type>
-        <Monthly></Monthly>
-        <Characteristics>
-            <Char type="isColored"></Char>
-            <Char type="size"></Char>
-            <Char type="isGlossy"></Char>
-            <Char type="subscription"></Char>
-        </Characteristics>
-    </paper><paper id="paper2">
-        <Title></Title>
-        <Type></Type>
-        <Monthly></Monthly>
-        <Characteristics>
-            <Char type="isColored"></Char>
-            <Char type="size"></Char>
-            <Char type="isGlossy"></Char>
-            <Char type="subscription"></Char>
-        </Characteristics>
-    </paper><paper id="paper2">
-        <Title></Title>
-        <Type></Type>
-        <Monthly></Monthly>
-        <Characteristics>
-            <Char type="isColored"></Char>
-            <Char type="size"></Char>
-            <Char type="isGlossy"></Char>
-            <Char type="subscription"></Char>
-        </Characteristics>
-    </paper>
-</papers>
+<?xml version="1.0" encoding='UTF-8'?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="papers">
+       <xs:complexType>
+           <xs:sequence>
+               <xs:element name="paper" maxOccurs="unbounded">
+                   <xs:complexType>
+                       <xs:sequence>
+                           <xs:element name="Title" type="xs:string"/>
+                           <xs:element name="Type">
+                               <xs:simpleType>
+                                   <xs:restriction base="xs:string">
+                                       <xs:enumeration value="newspaper"/>
+                                       <xs:enumeration value="magazine"/>
+                                       <xs:enumeration value="booklet"/>
+                                   </xs:restriction>
+                               </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="Monthly" type="xs:boolean"/>
+                           <xs:element name="Characteristics">
+                               <xs:complexType>
+                                   <xs:sequence>
+                                       <xs:element name="Char" maxOccurs="unbounded">
+                                           <xs:complexType>
+                                               <xs:attribute name="type" type="xs:string" use="required"/>
+                                           </xs:complexType>
+                                       </xs:element>
+                                   </xs:sequence>
+                               </xs:complexType>
+                           </xs:element>
+                       </xs:sequence>
+                   </xs:complexType>
+               </xs:element>
+           </xs:sequence>
+       </xs:complexType>
+    </xs:element>
+</xs:schema>

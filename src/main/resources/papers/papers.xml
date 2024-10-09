@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<papers>
+    <paper id="paper1">
+        <Title>New York Times</Title>
+        <Type>newspaper</Type>
+        <Monthly>false</Monthly>
+        <Characteristics>
+            <Char type="isColored">true</Char>
+            <Char type="pages">20</Char>
+            <Char type="isGlossy">false</Char>
+            <Char type="homeDelivery">true</Char>
+        </Characteristics>
+    </paper>
+    <paper id="paper2">
+        <Title>Grocery promotion</Title>
+        <Type>booklet</Type>
+        <Monthly>false</Monthly>
+        <Characteristics>
+            <Char type="isColored">true</Char>
+            <Char type="pages">2</Char>
+            <Char type="isGlossy">true</Char>
+            <Char type="homeDelivery">false</Char>
+        </Characteristics>
+    </paper>
+    <paper id="paper3">
+        <Title>Forbes</Title>
+        <Type>magazine</Type>
+        <Monthly>false</Monthly>
+        <Characteristics>
+            <Char type="isColored">true</Char>
+            <Char type="pages">120</Char>
+            <Char type="isGlossy">true</Char>
+            <Char type="homeDelivery">true</Char>
+        </Characteristics>
+    </paper>
+    <paper id="paper4">
+        <Title>Time</Title>
+        <Type>magazine</Type>
+        <Monthly>false</Monthly>
+        <Characteristics>
+            <Char type="isColored">true</Char>
+            <Char type="pages">50</Char>
+            <Char type="isGlossy">true</Char>
+            <Char type="homeDelivery">true</Char>
+        </Characteristics>
+    </paper>
+    <paper id="paper5">
+        <Title>Spam</Title>
+        <Type>booklet</Type>
+        <Monthly>false</Monthly>
+        <Characteristics>
+            <Char type="isColored">false</Char>
+            <Char type="size">1</Char>
+            <Char type="isGlossy">false</Char>
+            <Char type="homeDelivery">false</Char>
+        </Characteristics>
+    </paper>
+    <paper id="paper6">
+        <Title>RCT news</Title>
+        <Type>newspaper</Type>
+        <Monthly>true</Monthly>
+        <Characteristics>
+            <Char type="isColored">true</Char>
+            <Char type="size">4</Char>
+            <Char type="isGlossy">false</Char>
+            <Char type="homeDelivery">false</Char>
+        </Characteristics>
+    </paper>
+</papers>
