@@ -50,7 +50,7 @@
         <Monthly>false</Monthly>
         <Characteristics>
             <Char type="isColored">false</Char>
-            <Char type="size">1</Char>
+            <Char type="pages">1</Char>
             <Char type="isGlossy">false</Char>
             <Char type="homeDelivery">false</Char>
         </Characteristics>
@@ -61,7 +61,7 @@
         <Monthly>true</Monthly>
         <Characteristics>
             <Char type="isColored">true</Char>
-            <Char type="size">4</Char>
+            <Char type="pages">4</Char>
             <Char type="isGlossy">false</Char>
             <Char type="homeDelivery">false</Char>
         </Characteristics>

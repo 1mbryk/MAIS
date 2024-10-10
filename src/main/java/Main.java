@@ -1,10 +1,15 @@
 import paper.Characteristics;
 import paper.Paper;
+import parsers.DOMParser;
+
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Paper paper = new Paper("1", "Aboba", "biba", true,
-                new Characteristics(true, 10,true,true ));
-        System.out.println(paper);
+        DOMParser domParser = new DOMParser();
+        List<Paper> paperList = domParser.parse("src/main/resources/papers/papers.xml");
+        for (Paper paper : paperList) {
+            System.out.println(paper);
+        }
     }
 }
