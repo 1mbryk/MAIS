@@ -7,6 +7,8 @@ public class Paper {
     private boolean isMonthly;
     private Characteristics characteristics;
 
+    public Paper(){}
+
     public Paper(String id, String title, String type, boolean isMonthly, Characteristics characteristics) {
         this.id = id;
         this.title = title;
