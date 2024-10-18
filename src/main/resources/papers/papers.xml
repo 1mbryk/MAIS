@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<papers>
+<papers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="papers.xsd">
     <paper id="paper1">
         <Title>New York Times</Title>
         <Type>newspaper</Type>
